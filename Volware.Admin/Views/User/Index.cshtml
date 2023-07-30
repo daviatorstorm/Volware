@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Volware.DAL.Models.TempUser>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Users</h1>
+
+<div class="row">
+    <div class="col">
+        <a class="btn btn-primary" asp-action="Create">Create User</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>External id</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Role</td>
+                    <td>Warehouse</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.ExternalId</td>
+                        <td>@user.UserInfo.LastName @user.UserInfo.FirstName @user.UserInfo.ThirdName</td>
+                        <td>@user.UserInfo.Email</td>
+                        <td>@Enum.GetName(user.Role)</td>
+                        <td>@user.WarehouseId</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

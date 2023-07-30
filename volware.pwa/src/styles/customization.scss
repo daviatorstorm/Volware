@@ -1,0 +1,28 @@
+/* React-select customization */
+.react-select {
+    color: black;
+}
+
+.react-select-invalid .react-select-control {
+    border: 1px solid red;
+}
+
+/* Modal */
+.order-modal {
+    color: black;
+}
+
+.ReactModal__Content {
+    overflow-y: scroll;
+}
+
+.modal-content {
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+}

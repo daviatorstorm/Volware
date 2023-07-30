@@ -1,0 +1,105 @@
+﻿@model Volware.Admin.ViewModels.CreateUserViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create User</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create" class="row g-3" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-md-4">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" required class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" required class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="ThirdName" class="control-label"></label>
+                <input asp-for="ThirdName" required class="form-control" />
+                <span asp-validation-for="ThirdName" class="text-danger"></span>
+            </div>
+
+            <div class="col-8">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" required class="text-danger"></span>
+            </div>
+            <div class="col-4">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" required class="text-danger"></span>
+            </div>
+
+            <div class="col-6">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" required class="text-danger"></span>
+            </div>
+            <div class="col-3">
+                <label>Role</label>
+                <select required class="form-select" asp-for="Role" asp-items="Html.GetEnumSelectList<Volware.Common.UserRoleEnum>()"></select>
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+            <div class="col-3">
+                <label asp-for="WarehouseId" class="control-label"></label>
+                <select required class="form-select" asp-for="WarehouseId" id="warehouses-dropdown"></select>
+                <span asp-validation-for="WarehouseId" class="text-danger"></span>
+            </div>
+
+            <div class="col-6">
+                <label for="formFile" class="form-label">Profile photo</label>
+                <input asp-for="ProfilePhoto" class="form-control" type="file" id="formFile">
+            </div>
+
+            <div class="col-6">
+                <label for="documentPhotos" class="form-label">Document photos</label>
+                <input asp-for="DocumentPhotos" class="form-control" multiple type="file" id="documentPhotos">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $.ajax({
+            accepts: {
+                mycustomtype: 'application/json'
+            },
+            dataType: 'json',
+            url: '/Warehouse/WarehousesForDropdown'
+        }).done(function (data) {
+            console.log(data);
+            var warehouseDropdown = $('#warehouses-dropdown');
+            console.log(warehouseDropdown);
+
+            for (var item of data) {
+                warehouseDropdown.append($('<option>', {
+                    value: item.id,
+                    text: `${item.city}, ${item.address}`
+                }));
+            }
+        });
+    </script>
+    }
+
+

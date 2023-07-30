@@ -1,0 +1,62 @@
+var test = {
+    "aspectRatio": 1.643835616438356,
+    "colorTemperature": 0,
+    "deviceId": "e39168994c394988888ead53eec7ed1e2231cdf0e3a1773b78fc53c0a611188c",
+    "exposureCompensation": 0,
+    "exposureMode": "continuous",
+    "exposureTime": 0,
+    "facingMode": "environment",
+    "focusDistance": 0,
+    "focusMode": "continuous",
+    "frameRate": 30,
+    "groupId": "b9a4a39ba1d869b27b5616388ef56fb637f07c2e8c9c8510e9a0c0cb37a8ad4c",
+    "height": 292,
+    "iso": 100,
+    "resizeMode": "crop-and-scale",
+    "torch": false,
+    "whiteBalanceMode": "continuous",
+    "width": 480,
+    "zoom": 1
+};
+var test3 = {
+    "aspectRatio": 1.643835616438356,
+    "colorTemperature": 0,
+    "deviceId": "e39168994c394988888ead53eec7ed1e2231cdf0e3a1773b78fc53c0a611188c",
+    "exposureCompensation": 0,
+    "exposureMode": "continuous",
+    "exposureTime": 400,
+    "facingMode": "environment",
+    "focusDistance": 0,
+    "focusMode": "continuous",
+    "frameRate": 30,
+    "groupId": "5f467a5223f1abd86be35be9eb6e938dcd5db56c36c84dac2a118df509c2266f",
+    "height": 292,
+    "iso": 100,
+    "resizeMode": "crop-and-scale",
+    "torch": false,
+    "whiteBalanceMode": "continuous",
+    "width": 480,
+    "zoom": 1
+};
+var test2 =
+{
+    "aspectRatio": { "max": 2560, "min": 0.0005208333333333333 },
+    "colorTemperature": { "max": 7000, "min": 2850, "step": 50 },
+    "deviceId": "e39168994c394988888ead53eec7ed1e2231cdf0e3a1773b78fc53c0a611188c",
+    "exposureCompensation": { "max": 2, "min": -2, "step": 0.5 },
+    "exposureMode": ["continuous", "manual"],
+    "exposureTime": { "max": 4000, "min": 0, "step": 0 },
+    "facingMode": ["environment"],
+    "focusDistance": { "max": 5, "min": 0.10000000149011612, "step": 0.009999999776482582 },
+    "focusMode": ["manual", "single-shot", "continuous"],
+    "frameRate": { "max": 30, "min": 0 },
+    "groupId": "b9a4a39ba1d869b27b5616388ef56fb637f07c2e8c9c8510e9a0c0cb37a8ad4c",
+    "height": { "max": 1920, "min": 1 },
+    "iso": { "max": 1600, "min": 100, "step": 1 },
+    "resizeMode": ["none", "crop-and-scale"],
+    "torch": true,
+    "whiteBalanceMode": ["continuous", "manual"],
+    "width": { "max": 2560, "min": 1 },
+    "zoom": { "max": 4, "min": 1, "step": 0.1 }
+}
+
